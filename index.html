@@ -40,13 +40,13 @@ nav a{margin-right:16px}
 <ol>
   <li>The user runs the app locally and opens its web interface at <code>http://localhost:7071</code>.</li>
   <li>The app generates a script, images and a video with the AI providers whose API keys the user configured (bring-your-own-key).</li>
-  <li>The user reviews the result in the <b>Review</b> screen and can regenerate or edit anything.</li>
-  <li>The user presses <b>Publish</b> for the platform they want. Nothing is ever uploaded without that explicit action.</li>
+  <li>The user can review the result in the <b>Review</b> screen and regenerate or edit anything.</li>
+  <li>For YouTube, the creator chooses either a manual upload or an optional local publishing schedule. Scheduled uploads run only on the creator's own computer and only to the channel that the creator authorized.</li>
 </ol>
 </div>
 
 <h2>YouTube integration</h2>
-<p>Publishing uses the official <b>YouTube Data API v3</b> with OAuth 2.0. The app uploads only the video the user just generated and reviewed, with the title, description, tags and privacy status chosen by the user in the app, to the channel the user authorized. Refresh tokens are stored locally in the user's machine.</p>
+<p>Publishing uses the official <b>YouTube Data API v3</b> with OAuth 2.0. The app uploads only videos it generated locally, with their title, description, tags and privacy status, to the channel the creator authorized. The creator may initiate an upload manually or enable an optional local schedule. Refresh tokens are stored locally on the creator's machine.</p>
 
 <h2>TikTok integration</h2>
 <p>The app uses <b>Login Kit</b> (scopes <code>user.info.basic</code>, <code>video.publish</code>) to obtain the creator's access token, and the <b>Content Posting API</b> to publish:</p>
