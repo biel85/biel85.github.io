@@ -9,22 +9,43 @@ p,li{color:#b7c3cf} a{color:#7ec8ff} .muted{font-size:13px;color:#7c8b99}
 code{background:#1b242c;padding:1px 5px;border-radius:4px;font-size:13px}
 </style>
 <main><h1>Política de Privacidade</h1>
-<p class="muted">Última atualização: 29 de outubro de 2026</p>
+<p class="muted">Última atualização: 2 de novembro de 2026</p>
+
 <h2>1. Quem somos</h2>
 <p>O <b>YAAS Studio</b> é uma aplicação desktop de código aberto (licença MIT) que roda localmente no computador do próprio usuário. Ela gera vídeos com inteligência artificial e permite publicá-los em contas de redes sociais que o usuário autoriza, como YouTube e TikTok.</p>
+
 <h2>2. Dados que tratamos</h2>
 <p>O YAAS Studio não possui servidor próprio e não coleta dados para terceiros. Tudo fica na máquina do usuário:</p>
 <ul>
-<li>Chaves de API e tokens de acesso (YouTube, TikTok) são gravados em arquivos locais (<code>.env</code>, <code>.tt_tokens.json</code>) na pasta da aplicação.</li>
+<li>Chaves de API e tokens de acesso (YouTube, TikTok) são gravados em arquivos locais (<code>.env</code>, <code>youtube_token.pickle</code>, <code>.tt_tokens.json</code>) na pasta da aplicação.</li>
 <li>Roteiros, imagens e vídeos gerados ficam em pastas locais do computador.</li>
-<li>Ao publicar, o conteúdo do vídeo e os metadados (título, descrição) são enviados diretamente às APIs oficiais do YouTube e do TikTok, em nome da conta autorizada pelo usuário.</li>
+<li>Ao publicar, o conteúdo do vídeo e os metadados (título, descrição, capa) são enviados diretamente às APIs oficiais do YouTube e do TikTok, em nome da conta autorizada pelo usuário.</li>
 </ul>
-<h2>3. Compartilhamento</h2>
+
+<h2>3. YouTube API Services</h2>
+<p>O YAAS Studio usa os <b>YouTube API Services</b> para enviar vídeos à conta do YouTube que o usuário conectar.</p>
+<ul>
+<li>O acesso é feito por OAuth 2.0, com o escopo mínimo <code>https://www.googleapis.com/auth/youtube.upload</code>, usado exclusivamente para enviar vídeos, títulos, descrições e capas. O app não lê dados do canal, não acessa listas de reprodução e não apaga conteúdo.</li>
+<li>O token de acesso fica apenas no computador do usuário, no arquivo <code>youtube_token.pickle</code>, e nunca é enviado a servidores nossos.</li>
+<li>O token pode ser revogado a qualquer momento em <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> ou simplesmente apagando o arquivo <code>youtube_token.pickle</code>.</li>
+<li>O uso dos YouTube API Services é regido pelos <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Termos de Serviço do YouTube</a> e pela <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>, que é incorporada a esta política por referência.</li>
+<li>Não usamos dados obtidos do YouTube para publicidade, criação de perfis, revenda ou treinamento de modelos.</li>
+</ul>
+
+<h2>4. Compartilhamento</h2>
 <p>Não vendemos, alugamos nem compartilhamos dados com terceiros. As únicas transmissões são para as APIs oficiais das plataformas escolhidas pelo usuário e para os provedores de IA/banco de imagens cujas chaves o próprio usuário configurar.</p>
-<h2>4. Segurança</h2>
-<p>As credenciais nunca saem do computador do usuário. O acesso ao TikTok é feito via OAuth 2.0 oficial; o usuário pode revogar a autorização a qualquer momento nas configurações da conta TikTok (Segurança e permissões &rarr; Apps gerenciados).</p>
-<h2>5. Direitos do usuário</h2>
-<p>Como os dados são locais, o usuário pode apagá-los a qualquer momento removendo os arquivos citados acima ou desinstalando a aplicação.</p>
-<h2>6. Contato</h2>
-<p>Dúvidas sobre privacidade: <a href="mailto:suporte@yaas.studio">suporte@yaas.studio</a></p>
+
+<h2>5. Segurança</h2>
+<p>As credenciais nunca saem do computador do usuário. O acesso ao YouTube e ao TikTok é feito via OAuth 2.0 oficial; o usuário pode revogar a autorização a qualquer momento nas configurações da conta Google (Segurança → Acesso de terceiros) ou do TikTok (Segurança e permissões → Apps gerenciados).</p>
+
+<h2>6. Direitos do usuário</h2>
+<p>Como os dados são locais, o usuário pode apagá-los a qualquer momento removendo os arquivos citados acima ou desinstalando a aplicação. Não mantemos cópias em nuvem.</p>
+
+<h2>7. Contato</h2>
+<p>Dúvidas sobre privacidade: <a href="mailto:gc627903@gmail.com">gc627903@gmail.com</a></p>
+
+<hr style="border:none;border-top:1px solid #22303a;margin:36px 0">
+
+<h2>English summary</h2>
+<p>YAAS Studio is an open-source, local desktop application. It has no backend and stores nothing on our servers. To publish a video to YouTube it uses <b>YouTube API Services</b> through OAuth 2.0 with the single scope <code>https://www.googleapis.com/auth/youtube.upload</code>, which is used only to upload the video, its title, description and thumbnail. Access tokens stay on the user's computer (<code>youtube_token.pickle</code>) and can be revoked at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. By using the app you agree to the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>; Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> is incorporated into this policy by reference. We do not use YouTube data for advertising, profiling, resale or model training.</p>
 </main></html>
